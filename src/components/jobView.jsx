@@ -27,7 +27,7 @@ class JobsView extends React.Component {
     return (
       <React.Fragment>
         <div>
-          <div>
+          <div className="_view_btn-ctn">
             <button onClick={this.showFormApp}>Add Applicant</button>
             {showForm && <AddAppForm closeForm={this.closeFormApp} />}
           </div>
