@@ -5,8 +5,10 @@ class ApplicantView extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <h1>App View</h1>
-        <AppTable />
+        <div className="_view-table-ctn">
+          <h1>App View</h1>
+          <AppTable />
+        </div>
       </React.Fragment>
     );
   }

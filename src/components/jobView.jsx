@@ -31,7 +31,7 @@ class JobsView extends React.Component {
             <button onClick={this.showFormApp}>Add Applicant</button>
             {showForm && <AddAppForm closeForm={this.closeFormApp} />}
           </div>
-          <div className="job_view-table-ctn">
+          <div className="_view-table-ctn">
             <div style={{ display: 'flex' }}>
               <h3>List with all the available jobs</h3>
               <input
