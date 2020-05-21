@@ -25,9 +25,6 @@ class AppTable extends React.Component {
           <td>{sName}</td>
           <td>{eMail}</td>
           <td>{phNumber}</td>
-          <td>
-            <span>x</span>
-          </td>
         </tr>
       );
     });

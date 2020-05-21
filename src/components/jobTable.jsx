@@ -23,9 +23,6 @@ class JobTable extends React.Component {
           <td>{id}</td>
           <td>{jobName}</td>
           <td>{duration}</td>
-          <td>
-            <span>x</span>
-          </td>
         </tr>
       );
     });
