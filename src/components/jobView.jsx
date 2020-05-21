@@ -28,8 +28,13 @@ class JobsView extends React.Component {
       <React.Fragment>
         <div>
           <div className="_view_btn-ctn">
-            <button onClick={this.showFormApp}>Add Applicant</button>
+            <button onClick={this.showFormApp} className="btn-action">
+              Add Applicant
+            </button>
             {showForm && <AddAppForm closeForm={this.closeFormApp} />}
+            <button className="btn-action">Approve Applicant</button>
+            <button className="btn-action">Remove Applicant</button>
+            <button className="btn-action">Schedule interview</button>
           </div>
           <div className="_view-table-ctn">
             <div style={{ display: 'flex' }}>
