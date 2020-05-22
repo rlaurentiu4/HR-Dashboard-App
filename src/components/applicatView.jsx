@@ -3,6 +3,7 @@ import AppTable from './appTable.jsx';
 import AddAppForm from './addAppForm.jsx';
 
 import addApp from '../assets/icons/add_app.png';
+import rmvApp from '../assets/icons/remove_app.png';
 
 class ApplicantView extends React.Component {
   constructor(props) {
@@ -35,6 +36,10 @@ class ApplicantView extends React.Component {
               Add Applicant
             </button>
             {showForm && <AddAppForm closeForm={this.closeFormApp} />}
+            <button className="btn-action">
+              <img src={rmvApp} className="btn-icn" />
+              Remove Applicant
+            </button>
           </div>
           <div className="_view-table-ctn">
             <AppTable />

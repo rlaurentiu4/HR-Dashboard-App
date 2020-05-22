@@ -28,6 +28,12 @@ class NavBar extends React.Component {
               <p>Applicants</p>
             </div>
           </Link>
+          <Link to="/interviewView">
+            <div className="nav_menu_link">
+              <img />
+              <p>Interviews</p>
+            </div>
+          </Link>
         </nav>
       </div>
     );

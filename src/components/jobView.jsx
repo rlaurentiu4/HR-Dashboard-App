@@ -3,7 +3,6 @@ import JobTable from './jobTable.jsx';
 import appData from '../utilities/appData.js';
 
 import apvApp from '../assets/icons/apv_app.png';
-import rmvApp from '../assets/icons/remove_app.png';
 import schApp from '../assets/icons/sch_app.png';
 
 class JobsView extends React.Component {
@@ -16,10 +15,6 @@ class JobsView extends React.Component {
             <button className="btn-action">
               <img src={apvApp} className="btn-icn" />
               Approve Applicant
-            </button>
-            <button className="btn-action">
-              <img src={rmvApp} className="btn-icn" />
-              Remove Applicant
             </button>
             <button className="btn-action">
               <img src={schApp} className="btn-icn" />
