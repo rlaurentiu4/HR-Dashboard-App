@@ -4,11 +4,13 @@ import { Link } from 'react-router-dom';
 import dashboardIcon from '../assets/icons/dashboard_icon.png';
 import jobIcon from '../assets/icons/jobs_icon.png';
 import appIcon from '../assets/icons/applicant_icon.png';
+import logo from '../assets/icons/logo.svg';
 
 class NavBar extends React.Component {
   render() {
     return (
       <div className="main_nav">
+        <img src={logo} className="logo" />
         <nav>
           <Link to="/" exact>
             <div className="nav_menu_link">
