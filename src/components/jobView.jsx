@@ -1,5 +1,6 @@
 import React from 'react';
 import JobTable from './jobTable.jsx';
+import appData from '../utilities/appData.js';
 
 import apvApp from '../assets/icons/apv_app.png';
 import rmvApp from '../assets/icons/remove_app.png';
@@ -7,6 +8,7 @@ import schApp from '../assets/icons/sch_app.png';
 
 class JobsView extends React.Component {
   render() {
+    let appLenght = Object.keys(appData).length;
     return (
       <React.Fragment>
         <div>
@@ -23,6 +25,20 @@ class JobsView extends React.Component {
               <img src={schApp} className="btn-icn" />
               Schedule interview
             </button>
+            <div className="_app-view-ctn-data">
+              <div>
+                <h4>Total</h4>
+                <h3>{appLenght}</h3>
+              </div>
+              <div>
+                <h4>Approved</h4>
+                <h3>6</h3>
+              </div>
+              <div>
+                <h4>Schedule</h4>
+                <h3>3</h3>
+              </div>
+            </div>
           </div>
           <div className="_view-table-ctn">
             <div style={{ display: 'flex' }}>

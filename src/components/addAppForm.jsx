@@ -30,14 +30,6 @@ class AddAppForm extends React.Component {
 
   submitForm(e) {
     e.preventDefault();
-    let xhttp = new XMLHttpRequest();
-    xhttp.open('POST', 'http://localhost:8080/', true);
-    xhttp.send('Data= ' + JSON.stringify(this.state));
-    xhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        console.log(this.responseText);
-      }
-    };
   }
 
   handleCloseForm(e) {
