@@ -1,36 +1,54 @@
 import React from 'react';
 import jobData from '../utilities/jobData.js';
+import appData from '../utilities/appData.js';
 
 class AddAppForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      fname: '',
-      fnameError: '',
-      sname: '',
-      sError: '',
-      email: '',
-      emailError: '',
-      phnumber: '',
-      position: '',
-      phError: '',
-      city: '',
-      state: '',
-      textarea: '',
+      applicants: appData,
     };
-
-    this.onChangeHandler = this.onChangeHandler.bind(this);
     this.renderJobSelect = this.renderJobSelect.bind(this);
     this.handleCloseForm = this.handleCloseForm.bind(this);
     this.submitForm = this.submitForm.bind(this);
   }
 
-  onChangeHandler(e) {
-    this.setState({ [e.target.name]: e.target.value });
-  }
-
   submitForm(e) {
     e.preventDefault();
+    const { applicants } = this.state,
+      fname = this.refs.fname.value,
+      sname = this.refs.sname.value,
+      email = this.refs.email.value,
+      phnumber = this.refs.phnumber.value,
+      city = this.refs.city.value,
+      state = this.refs.state.value,
+      comments = this.refs.comments.value;
+    this.setState(
+      {
+        applicants: [
+          ...applicants,
+          {
+            fname,
+            sname,
+            email,
+            phnumber,
+            city,
+            state,
+            comments,
+          },
+        ],
+      },
+      () => {
+        (this.refs.fname.value = ''),
+          (this.refs.sname.value = ''),
+          (this.refs.email.value = ''),
+          (this.refs.phnumber.value = ''),
+          (this.refs.city.value = ''),
+          (this.refs.state.value = ''),
+          (this.refs.comments.value = '');
+      }
+    );
+    console.log(this.state);
   }
 
   handleCloseForm(e) {
@@ -61,38 +79,22 @@ class AddAppForm extends React.Component {
             <div className="app_form-first-row">
               <label>
                 <h4>First name:</h4>
-                <input
-                  type="text"
-                  name="fname"
-                  onChange={this.onChangeHandler}
-                />
+                <input type="text" name="fname" ref="fname" />
                 <span></span>
               </label>
               <label>
                 <h4>Second name:</h4>
-                <input
-                  type="text"
-                  name="sname"
-                  onChange={this.onChangeHandler}
-                />
+                <input type="text" name="sname" ref="sname" />
                 <span></span>
               </label>
               <label>
                 <h4>E-mail:</h4>
-                <input
-                  type="text"
-                  name="email"
-                  onChange={this.onChangeHandler}
-                />
+                <input type="text" name="email" ref="email" />
                 <span></span>
               </label>
               <label>
                 <h4>Ph. number:</h4>
-                <input
-                  type="text"
-                  name="phnumber"
-                  onChange={this.onChangeHandler}
-                />
+                <input type="text" name="phnumber" ref="phnumber" />
                 <span></span>
               </label>
               <label>
@@ -104,25 +106,17 @@ class AddAppForm extends React.Component {
             <div className="app_form-second-row">
               <label>
                 <h4>City:</h4>
-                <input
-                  type="text"
-                  name="city"
-                  onChange={this.onChangeHandler}
-                />
+                <input type="text" name="city" ref="city" />
                 <span></span>
               </label>
               <label>
                 <h4>State/Country:</h4>
-                <input
-                  type="text"
-                  name="state"
-                  onChange={this.onChangeHandler}
-                />
+                <input type="text" name="state" ref="state" />
                 <span></span>
               </label>
               <label>
                 <h4>Other comments:</h4>
-                <textarea></textarea>
+                <textarea type="text" ref="comments"></textarea>
                 <span></span>
               </label>
               <div className="form_btn-ctn">
