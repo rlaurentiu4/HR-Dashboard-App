@@ -5,6 +5,10 @@ const appData = [
     sName: 'Doe',
     eMail: 'john.doe@email.com',
     phNumber: '0732894832',
+    position: ' ',
+    city: 'Bucharest',
+    state: 'Romania',
+    comments: ' ',
   },
   {
     id: '2',
@@ -12,6 +16,10 @@ const appData = [
     sName: 'Doe',
     eMail: 'john.doe@email.com',
     phNumber: '0732894832',
+    position: ' ',
+    city: 'Bucharest',
+    state: 'Romania',
+    comments: ' ',
   },
   {
     id: '3',
@@ -19,6 +27,10 @@ const appData = [
     sName: 'Doe',
     eMail: 'john.doe@email.com',
     phNumber: '0732894832',
+    position: ' ',
+    city: 'Bucharest',
+    state: 'Romania',
+    comments: ' ',
   },
   {
     id: '4',
@@ -26,6 +38,10 @@ const appData = [
     sName: 'Doe',
     eMail: 'john.doe@email.com',
     phNumber: '0732894832',
+    position: ' ',
+    city: 'Bucharest',
+    state: 'Romania',
+    comments: ' ',
   },
   {
     id: '5',
@@ -33,13 +49,10 @@ const appData = [
     sName: 'Doe',
     eMail: 'john.doe@email.com',
     phNumber: '0732894832',
-  },
-  {
-    id: '6',
-    fName: 'John',
-    sName: 'Doe',
-    eMail: 'john.doe@email.com',
-    phNumber: '0732894832',
+    position: ' ',
+    city: 'Bucharest',
+    state: 'Romania',
+    comments: ' ',
   },
 ];
 

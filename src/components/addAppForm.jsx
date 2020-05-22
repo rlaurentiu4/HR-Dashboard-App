@@ -12,6 +12,7 @@ class AddAppForm extends React.Component {
       email: '',
       emailError: '',
       phnumber: '',
+      position: '',
       phError: '',
       city: '',
       state: '',

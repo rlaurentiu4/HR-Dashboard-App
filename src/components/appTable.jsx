@@ -17,7 +17,17 @@ class AppTable extends React.Component {
 
   renderTable() {
     return appData.map((applicant) => {
-      const { id, fName, sName, eMail, phNumber } = applicant;
+      const {
+        id,
+        fName,
+        sName,
+        eMail,
+        phNumber,
+        position,
+        city,
+        state,
+        comments,
+      } = applicant;
       return (
         <tr key={id}>
           <td>{id}</td>
@@ -25,6 +35,10 @@ class AppTable extends React.Component {
           <td>{sName}</td>
           <td>{eMail}</td>
           <td>{phNumber}</td>
+          <td>{position}</td>
+          <td>{city}</td>
+          <td>{state}</td>
+          <td>{comments}</td>
         </tr>
       );
     });
