@@ -1,10 +1,8 @@
-import React, { Children } from 'react';
+import React from 'react';
 import firebase from '../config/firebase.js';
 
 function AppTable() {
   const [applicants, setApplicants] = React.useState([]);
-  const speed = React.useState(['']);
-  console.log(this.state);
   let data = () =>
     React.useEffect(() => {
       const fetchData = async () => {
@@ -14,8 +12,8 @@ function AppTable() {
       };
       fetchData();
     }, []);
-  data();
 
+  data();
   // const db = firebase.firestore();
   // const dbRef = db.ref().child('data');
   // db.Ref.on('value', (snapshot) => {
@@ -24,18 +22,35 @@ function AppTable() {
   //   });
   // });
 
-  let renderData = () => (
-    <div>
-      {applicants.map((applicant) => (
-        <li key={applicant.id}>{applicant.name}</li>
-      ))}
-    </div>
-  );
+  let renderTable = () => {
+    return applicants.map((applicant, index) => {
+      const { firstName, secondName, email, phNumber } = applicant;
+      return (
+        <tr key={index}>
+          <td>{firstName}</td>
+          <td>{secondName}</td>
+          <td>{email}</td>
+          <td>{phNumber}</td>
+        </tr>
+      );
+    });
+  };
 
+  // let renderData = () => (
+  //   <div>
+  //     {applicants.map((applicant) => (
+  //       <ul key={applicant.id}>
+  //         <li>{applicant.firstName}</li>
+  //         <li>{applicant.secondName}</li>
+  //         <li>{applicant.email}</li>
+  //         <li>{applicant.phNumber}</li>
+  //       </ul>
+  //     ))}
+  //   </div>
+  // );
   // return <div>{true ? data() : renderData()}</div>;
 
-  return <div>{renderData()}</div>;
-  console.log(this.fetchData());
+  return <div>{renderTable()}</div>;
 }
 
 export default AppTable;

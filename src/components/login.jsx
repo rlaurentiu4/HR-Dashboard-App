@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Svg from '../assets/undraw_Login_v483.svg';
 import fire from '../config/firebase.js';
 
 class Login extends React.Component {
@@ -32,24 +32,45 @@ class Login extends React.Component {
   }
   render() {
     return (
-      <React.Fragment>
-        <div>
-          <h1>Email</h1>
-          <input type="text" id="email" placeholder="enter your email..." />
+      <>
+        <div className="flex-center">
+          <div className="sign-in-up_ctn d-flex anim_fade-in">
+            <div className="logo_ctn flex-center">
+              <img src={Svg} alt="" />
+            </div>
+
+            <div className="login_ctn flex-center">
+              <div className="info_ctn">
+                <h1>Login</h1>
+              </div>
+              <div>
+                <h3>Your E-mail:</h3>
+                <input
+                  type="text"
+                  id="email"
+                  placeholder="enter your email..."
+                />
+              </div>
+              <div>
+                <h3>Password:</h3>
+                <input
+                  type="password"
+                  placeholder="enter your password"
+                  id="password"
+                />
+              </div>
+              <div className="flex-center btn-log-in-ctn">
+                <button onClick={this.login} className="main_btn-login">
+                  Login
+                </button>
+                <button onClick={this.signup} className="sec_btn-login">
+                  Sign Up
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          <h1>Password</h1>
-          <input
-            type="password"
-            placeholder="enter your password"
-            id="password"
-          />
-        </div>
-        <div>
-          <button onClick={this.login}>Login</button>
-          <button onClick={this.signup}>Sign Up</button>
-        </div>
-      </React.Fragment>
+      </>
     );
   }
 }

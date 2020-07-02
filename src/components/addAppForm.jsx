@@ -3,23 +3,21 @@ import firebase from '../config/firebase.js';
 import regeneratorRuntime from 'regenerator-runtime';
 
 function AddAppForm() {
-  const [newApplicant, setNewApplicat] = React.useState();
+  const [fName, setNewFName] = React.useState([]);
+  const [sName, setSName] = React.useState([]);
 
-  // const [applicants, setApplicant] = React.useState([]);
-  // React.useEffect(() => {
-  //   const fetchData = async () => {
-  //     const db = firebase.firestore();
-  //     const data = await db.collection('applicants').get();
-  //     setApplicant(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-  //   };
-  //   fetchData();
-  //   console.log(applicants);
-  // }, []);
+  const [email, setEmail] = React.useState([]);
+  const [phNumber, setPhNumber] = React.useState([]);
 
   const onCreate = () => {
     const db = firebase.firestore();
-    db.collection('applicants').add({ name: newApplicant });
-    console.log('works');
+    db.collection('applicants').add({
+      firstName: fName,
+      secondName: sName,
+      email: email,
+      phNumber: phNumber,
+    });
+    console.log('send data works');
   };
 
   return (
@@ -28,12 +26,35 @@ function AddAppForm() {
         type="text"
         name="fullname"
         placeholder="Fullname"
-        onChange={(e) => setNewApplicat(e.target.value)}
-        value={newApplicant}
+        onChange={(e) => setNewFName(e.target.value)}
+        value={fName}
       />
+
+      <input
+        type="text"
+        name="secondname"
+        placeholder="Secondname"
+        onChange={(e) => setSName(e.target.value)}
+        value={sName}
+      />
+
+      <input
+        type="email"
+        name="email"
+        placeholder="enter email adress"
+        onChange={(e) => setEmail(e.target.value)}
+        value={email}
+      />
+
+      <input
+        type="text"
+        name="phNumber"
+        placeholder="Enter phone number"
+        onChange={(e) => setPhNumber(e.target.value)}
+        value={phNumber}
+      />
+
       <button onClick={onCreate}>Submit</button>
-      {/* {applicants.map((applicant) => (
-      <li key={applicant.id}>{applicant.name}</li> */}
     </div>
   );
 }
