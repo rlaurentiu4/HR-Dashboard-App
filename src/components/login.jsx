@@ -1,6 +1,8 @@
 import React from 'react';
-import Svg from '../assets/undraw_Login_v483.svg';
 import fire from '../config/firebase.js';
+
+import Svg from '../assets/undraw_Login_v483.svg';
+import logo from '../assets/icons/logo.svg';
 
 class Login extends React.Component {
   login() {
@@ -40,7 +42,12 @@ class Login extends React.Component {
             </div>
 
             <div className="login_ctn flex-center">
-              <div className="info_ctn">
+              <img
+                src={logo}
+                className="logo"
+                style={{ margin: '0', width: '35%' }}
+              />
+              <div className="info_ctn anim_fade-in">
                 <h1>Login</h1>
               </div>
               <div>

@@ -1,4 +1,4 @@
-@font: 'Open-Sans', sans-serif;
+@font: 'Fira Sans', sans-serif;
 @bg-color-primary: #2b364a;
 
 *,
@@ -21,13 +21,28 @@ body {
   display: flex;
 }
 
+.box-shadow {
+  box-shadow: 0 1px 2px rgba(43, 54, 74, 0.1), 0 2px 4px rgba(43, 54, 74, 0.1),
+    0 4px 8px rgba(43, 54, 74, 0.1), 0 8px 16px rgba(43, 54, 74, 0.1),
+    0 16px 32px rgba(43, 54, 74, 0.1), 0 32px 64px rgba(43, 54, 74, 0.1);
+  -webkit-box-shadow: 0 1px 2px rgba(43, 54, 74, 0.1),
+    0 2px 4px rgba(43, 54, 74, 0.1), 0 4px 8px rgba(43, 54, 74, 0.1),
+    0 8px 16px rgba(43, 54, 74, 0.1), 0 16px 32px rgba(43, 54, 74, 0.1),
+    0 32px 64px rgba(43, 54, 74, 0.1);
+  -moz-box-shadow: 0 1px 2px rgba(43, 54, 74, 0.1),
+    0 2px 4px rgba(43, 54, 74, 0.1), 0 4px 8px rgba(43, 54, 74, 0.1),
+    0 8px 16px rgba(43, 54, 74, 0.1), 0 16px 32px rgba(43, 54, 74, 0.1),
+    0 32px 64px rgba(43, 54, 74, 0.1);
+}
+
 .sign-in-up_ctn {
   margin: 8vh;
   width: 75vw;
   height: 83vh;
-  border: 2px solid @bg-color-primary;
+  border: 2px solid #eef4fb;
   border-radius: 15px;
   background-color: white;
+  .box-shadow();
 
   .logo_ctn {
     width: 50%;
@@ -44,7 +59,7 @@ body {
     color: #8F98A1;
 
     .info_ctn {
-      margin: 8vh 0;
+      margin: 3vh 0;
     }
   }
 
@@ -68,17 +83,7 @@ body {
       &:hover {
         cursor: pointer;
         transform: scale(1.05);
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
-          0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
-          0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
-        -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07),
-          0 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07),
-          0 8px 16px rgba(0, 0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07),
-          0 32px 64px rgba(0, 0, 0, 0.07);
-        -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07),
-          0 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07),
-          0 8px 16px rgba(0, 0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07),
-          0 32px 64px rgba(0, 0, 0, 0.07);
+        .box-shadow();
       }
     }
 
@@ -88,6 +93,10 @@ body {
       border: 1px solid #2b364a !important;
       border-radius: 5px !important;
       .main_btn-login();
+
+      &:hover {
+        font-weight: 600;
+      }
     }
   }
 
@@ -253,15 +262,16 @@ td {
 
 input[type='text'],
 input[type="password"],
+input[type="email"],
 select {
   margin: 2vh 0;
   padding: 10px 20px;
   width: 25vw;
-  border: 1px solid #2b364a;
+  border: 1px solid #eef4fb;
   border-radius: 5px;
   font-size: 16px;
   font-weight: 600;
-  line-height: 1;
+  letter-spacing: 1px;
 }
 
 label {
@@ -357,17 +367,7 @@ textarea {
 
   &:hover {
     cursor: pointer;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
-      0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
-      0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
-    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07),
-      0 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07),
-      0 8px 16px rgba(0, 0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07),
-      0 32px 64px rgba(0, 0, 0, 0.07);
-    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07),
-      0 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07),
-      0 8px 16px rgba(0, 0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07),
-      0 32px 64px rgba(0, 0, 0, 0.07);
+    .box-shadow();
   }
 }
 
