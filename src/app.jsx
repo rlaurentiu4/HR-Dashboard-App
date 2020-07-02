@@ -1,28 +1,34 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import fire from './config/fire.js';
 
-import NavBar from '../src/components/navBar.jsx';
-import DashboardView from './components/dashboardView.jsx';
-import JobsView from './components/jobView.jsx';
-import ApplicantView from './components/applicatView.jsx';
-import InterviewView from './components/interview.jsx';
+import Main from './components/main.jsx';
+import Login from './components/login.jsx';
 
 class App extends React.Component {
-  render() {
-    return (
-      <Router>
-        <div className="main-ctn">
-          <NavBar />
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: null,
+    };
+    this.authListener = this.authListener.bind(this);
+  }
 
-          <Switch>
-            <Route path="/" exact component={DashboardView} />
-            <Route path="/jobsView" component={JobsView} />
-            <Route path="/applicantView" component={ApplicantView} />
-            <Route path="/interviewView" component={InterviewView} />
-          </Switch>
-        </div>
-      </Router>
-    );
+  componentDidMount() {
+    this.authListener();
+  }
+
+  authListener() {
+    fire.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ user });
+      } else {
+        this.setState({ user: null });
+      }
+    });
+  }
+
+  render() {
+    return <div>{this.state.user ? <Main /> : <Login />}</div>;
   }
 }
 export default App;

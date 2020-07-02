@@ -17,7 +17,7 @@ class ApplicantView extends React.Component {
   }
 
   showFormApp() {
-    console.log('works');
+    console.log('form closed');
     this.setState({ showForm: true });
   }
 
@@ -41,9 +41,7 @@ class ApplicantView extends React.Component {
               Remove Applicant
             </button>
           </div>
-          <div className="_view-table-ctn">
-            <AppTable />
-          </div>
+          <div className="_view-table-ctn">{/* <AppTable /> */}</div>
         </div>
       </React.Fragment>
     );

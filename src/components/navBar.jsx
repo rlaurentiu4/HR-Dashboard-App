@@ -18,16 +18,16 @@ class NavBar extends React.Component {
               <p>Dashboard</p>
             </div>
           </Link>
-          <Link to="/jobsView">
-            <div className="nav_menu_link">
-              <img src={jobIcon} />
-              <p>Jobs</p>
-            </div>
-          </Link>
           <Link to="/applicantView">
             <div className="nav_menu_link">
               <img src={appIcon} />
               <p>Applicants</p>
+            </div>
+          </Link>
+          <Link to="/jobsView">
+            <div className="nav_menu_link">
+              <img src={jobIcon} />
+              <p>Jobs</p>
             </div>
           </Link>
           <Link to="/interviewView">

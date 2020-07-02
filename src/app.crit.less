@@ -1,13 +1,17 @@
 @font: 'Open-Sans', sans-serif;
 @bg-color-primary: #2b364a;
 
-* {
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   overflow-x: hidden;
   background-color: #eef4fb;
   font-family: @font;
@@ -103,8 +107,10 @@ a {
 //  css for table
 .anim-table {
   animation: 0.7s cubic-bezier(0, 0, 0.6, 0.77) slideInFromRight;
-  -webkit-animation: 0.7s ease-in 0.7s cubic-bezier(0, 0, 0.6, 0.77) slideInFromRight;
-  -moz-animation: 0.7s ease-in 0.7s cubic-bezier(0, 0, 0.6, 0.77) slideInFromRight;
+  -webkit-animation: 0.7s ease-in 0.7s cubic-bezier(0, 0, 0.6, 0.77)
+    slideInFromRight;
+  -moz-animation: 0.7s ease-in 0.7s cubic-bezier(0, 0, 0.6, 0.77)
+    slideInFromRight;
   -o-animation: 0.7s ease-in 0.7s cubic-bezier(0, 0, 0.6, 0.77) slideInFromRight;
 }
 
@@ -118,25 +124,20 @@ a {
   .anim-table();
 
   th {
-    text-align: center;
-    background-color: #58b2f3;
-    color: white;
+    // text-align: center;
+    // background-color: #58b2f3;
+    // color: white;
   }
 
   tr {
-    padding: 15px;
-    background-color: #f5f7fa;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
     transition: all 0.5s ease 0s;
   }
 
   tr:nth-child(even) {
-    background-color: white;
-  }
-
-  tr:hover {
-    background-color: #f2f4ff;
-    border-radius: 2.5px;
-    cursor: context-menu;
+    background-color: #f5f7fa;
   }
 }
 
@@ -144,8 +145,9 @@ table,
 th,
 td {
   border-collapse: collapse;
-  border: 1px solid #edeef2;
-  padding: 10px;
+  padding: 25px;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .app_form {
@@ -233,8 +235,10 @@ textarea {
 
 .anim-view-ctn {
   animation: 0.5s cubic-bezier(0, 0, 0.6, 0.77) slideInFromRight;
-  -webkit-animation: 0.5s ease-in 0.5s cubic-bezier(0, 0, 0.6, 0.77) slideInFromRight;
-  -moz-animation: 0.5s ease-in 0.5s cubic-bezier(0, 0, 0.6, 0.77) slideInFromRight;
+  -webkit-animation: 0.5s ease-in 0.5s cubic-bezier(0, 0, 0.6, 0.77)
+    slideInFromRight;
+  -moz-animation: 0.5s ease-in 0.5s cubic-bezier(0, 0, 0.6, 0.77)
+    slideInFromRight;
   -o-animation: 0.5s ease-in 0.5s cubic-bezier(0, 0, 0.6, 0.77) slideInFromRight;
 }
 
@@ -281,23 +285,16 @@ textarea {
 
   &:hover {
     cursor: pointer;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07),
-      0 2px 4px rgba(0, 0, 0, 0.07),
-      0 4px 8px rgba(0, 0, 0, 0.07),
-      0 8px 16px rgba(0, 0, 0, 0.07),
-      0 16px 32px rgba(0, 0, 0, 0.07),
-      0 32px 64px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+      0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+      0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
     -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07),
-      0 2px 4px rgba(0, 0, 0, 0.07),
-      0 4px 8px rgba(0, 0, 0, 0.07),
-      0 8px 16px rgba(0, 0, 0, 0.07),
-      0 16px 32px rgba(0, 0, 0, 0.07),
+      0 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07),
+      0 8px 16px rgba(0, 0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07),
       0 32px 64px rgba(0, 0, 0, 0.07);
     -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07),
-      0 2px 4px rgba(0, 0, 0, 0.07),
-      0 4px 8px rgba(0, 0, 0, 0.07),
-      0 8px 16px rgba(0, 0, 0, 0.07),
-      0 16px 32px rgba(0, 0, 0, 0.07),
+      0 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07),
+      0 8px 16px rgba(0, 0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07),
       0 32px 64px rgba(0, 0, 0, 0.07);
   }
 }

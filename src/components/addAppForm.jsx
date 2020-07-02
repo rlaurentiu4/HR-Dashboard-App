@@ -2,53 +2,62 @@ import React from 'react';
 import jobData from '../utilities/jobData.js';
 import appData from '../utilities/appData.js';
 
+function RenderJobSelect() {
+  let optionItems = jobData.map((data) => (
+    <option key={data.id} value={data.id}>
+      {data.jobName}
+    </option>
+  ));
+
+  return (
+    <div>
+      <select>{optionItems}</select>
+    </div>
+  );
+}
+
 class AddAppForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       applicants: appData,
+      newApp: {
+        fname: '',
+        sname: '',
+        email: '',
+        phnumber: '',
+        position: '',
+        city: '',
+        state: '',
+        comments: '',
+      },
     };
-    this.renderJobSelect = this.renderJobSelect.bind(this);
     this.handleCloseForm = this.handleCloseForm.bind(this);
-    this.submitForm = this.submitForm.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleInput = this.handleInput.bind(this);
   }
 
-  submitForm(e) {
+  handleSubmit(e) {
     e.preventDefault();
-    const { applicants } = this.state,
-      fname = this.refs.fname.value,
-      sname = this.refs.sname.value,
-      email = this.refs.email.value,
-      phnumber = this.refs.phnumber.value,
-      city = this.refs.city.value,
-      state = this.refs.state.value,
-      comments = this.refs.comments.value;
+    const { applicants, newApp } = this.state;
     this.setState(
       {
-        applicants: [
-          ...applicants,
-          {
-            fname,
-            sname,
-            email,
-            phnumber,
-            city,
-            state,
-            comments,
-          },
-        ],
+        contacts: [...applicants, newApp],
       },
       () => {
-        (this.refs.fname.value = ''),
-          (this.refs.sname.value = ''),
-          (this.refs.email.value = ''),
-          (this.refs.phnumber.value = ''),
-          (this.refs.city.value = ''),
-          (this.refs.state.value = ''),
-          (this.refs.comments.value = '');
+        for (let val in newApp) {
+          newApp[val] = '';
+        }
+        this.setState({ newApp });
       }
     );
-    console.log(this.state);
+    console.log(applicants);
+  }
+
+  handleInput(e, element) {
+    const { newApp } = this.state;
+    newApp[element] = e.target.value;
+    this.setState({ newApp });
   }
 
   handleCloseForm(e) {
@@ -57,66 +66,88 @@ class AddAppForm extends React.Component {
     this.props.closeForm(e);
   }
 
-  renderJobSelect() {
-    let optionItems = jobData.map((data) => (
-      <option key={data.id} value={data.id}>
-        {data.jobName}
-      </option>
-    ));
-
-    return (
-      <div>
-        <select>{optionItems}</select>
-      </div>
-    );
-  }
-
   renderForm() {
+    const { newApp } = this.state;
+    const { fname, sname, email, phnumber, state, city, comments } = newApp;
     return (
       <React.Fragment>
-        <form className="app_form" onSubmit={this.submitForm}>
+        <form className="app_form" onSubmit={this.handleSubmit}>
           <div>
             <div className="app_form-first-row">
               <label>
                 <h4>First name:</h4>
-                <input type="text" name="fname" ref="fname" />
+                <input
+                  type="text"
+                  name="fname"
+                  value={fname}
+                  onChange={(e) => this.handleInput(e, 'fname')}
+                />
                 <span></span>
               </label>
               <label>
                 <h4>Second name:</h4>
-                <input type="text" name="sname" ref="sname" />
+                <input
+                  type="text"
+                  name="sname"
+                  value={sname}
+                  onChange={(e) => this.handleInput(e, 'sname')}
+                />
                 <span></span>
               </label>
               <label>
                 <h4>E-mail:</h4>
-                <input type="text" name="email" ref="email" />
+                <input
+                  type="text"
+                  name="email"
+                  value={email}
+                  onChange={(e) => this.handleInput(e, 'email')}
+                />
                 <span></span>
               </label>
               <label>
                 <h4>Ph. number:</h4>
-                <input type="text" name="phnumber" ref="phnumber" />
+                <input
+                  type="text"
+                  name="phnumber"
+                  value={phnumber}
+                  onChange={(e) => this.handleInput(e, 'phnumber')}
+                />
                 <span></span>
               </label>
               <label>
                 <h4>Position:</h4>
-                {this.renderJobSelect()}
+                <RenderJobSelect />
                 <span></span>
               </label>
             </div>
             <div className="app_form-second-row">
               <label>
                 <h4>City:</h4>
-                <input type="text" name="city" ref="city" />
+                <input
+                  type="text"
+                  name="city"
+                  value={city}
+                  onChange={(e) => this.handleInput(e, 'city')}
+                />
                 <span></span>
               </label>
               <label>
                 <h4>State/Country:</h4>
-                <input type="text" name="state" ref="state" />
+                <input
+                  type="text"
+                  name="state"
+                  value={state}
+                  onChange={(e) => this.handleInput(e, 'state')}
+                />
                 <span></span>
               </label>
               <label>
                 <h4>Other comments:</h4>
-                <textarea type="text" ref="comments"></textarea>
+                <textarea
+                  type="text"
+                  value={comments}
+                  onChange={(e) => this.handleInput(e, 'comments')}
+                ></textarea>
                 <span></span>
               </label>
               <div className="form_btn-ctn">
