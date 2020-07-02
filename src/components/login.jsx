@@ -1,6 +1,6 @@
 import React from 'react';
 
-import fire from '../config/fire.js';
+import fire from '../config/firebase.js';
 
 class Login extends React.Component {
   login() {

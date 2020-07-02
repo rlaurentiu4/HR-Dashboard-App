@@ -1,4 +1,6 @@
 import React from 'react';
+import fire from '../config/firebase.js';
+
 import { Link } from 'react-router-dom';
 
 import dashboardIcon from '../assets/icons/dashboard_icon.png';
@@ -7,6 +9,9 @@ import appIcon from '../assets/icons/applicant_icon.png';
 import logo from '../assets/icons/logo.svg';
 
 class NavBar extends React.Component {
+  logout() {
+    fire.auth().signOut();
+  }
   render() {
     return (
       <div className="main_nav">
@@ -36,6 +41,9 @@ class NavBar extends React.Component {
               <p>Interviews</p>
             </div>
           </Link>
+          <div>
+            <button onClick={this.logout}>logout</button>
+          </div>
         </nav>
       </div>
     );

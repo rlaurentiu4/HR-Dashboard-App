@@ -41,7 +41,9 @@ class ApplicantView extends React.Component {
               Remove Applicant
             </button>
           </div>
-          <div className="_view-table-ctn">{/* <AppTable /> */}</div>
+          <div className="_view-table-ctn">
+            <AppTable />
+          </div>
         </div>
       </React.Fragment>
     );

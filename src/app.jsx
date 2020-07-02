@@ -1,5 +1,5 @@
 import React from 'react';
-import fire from './config/fire.js';
+import fire from './config/firebase.js';
 
 import Main from './components/main.jsx';
 import Login from './components/login.jsx';
