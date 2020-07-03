@@ -29,17 +29,21 @@ class ApplicantView extends React.Component {
     const { showForm } = this.state;
     return (
       <React.Fragment>
-        <div>
+        <div className="main_ctn anim-view-ctn">
           <div className="_view_btn-ctn">
-            <button onClick={this.showFormApp} className="btn-action">
-              <img src={addApp} className="btn-icn" />
-              Add Applicant
-            </button>
-            {showForm && <AddAppForm closeForm={this.closeFormApp} />}
-            <button className="btn-action">
-              <img src={rmvApp} className="btn-icn" />
-              Remove Applicant
-            </button>
+            <div>
+              <button onClick={this.showFormApp} className="btn-action">
+                <img src={addApp} className="btn-icn" />
+                Add Applicant
+              </button>
+              <button className="btn-action">
+                <img src={rmvApp} className="btn-icn" />
+                Remove Applicant
+              </button>
+            </div>
+            <div>
+              {showForm && <AddAppForm closeForm={this.closeFormApp} />}
+            </div>
           </div>
           <div className="_view-table-ctn">
             <AppTable />

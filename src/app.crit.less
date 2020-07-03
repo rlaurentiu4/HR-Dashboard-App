@@ -99,7 +99,6 @@ body {
       }
     }
   }
-
 }
 
 .logo {
@@ -127,17 +126,13 @@ body {
 }
 
 .main_nav {
-  width: 250px;
-  height: 1000px;
-  border-radius: 15px;
-  margin: 30px;
+  position: fixed;
+  height: 100%;
+  width: 15vw;
   background-color: white;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  -webkit-box-shadow: 0px 22px 50px rgba(153, 153, 153, 0.7);
-  -moz-box-shadow: 0px 22px 50px rgba(153, 153, 153, 0.7);
-  box-shadow: 0px 22px 50px rgba(153, 153, 153, 0.7);
+  flex-direction: column;
   .anim_fade-in();
 
   nav {
@@ -163,9 +158,20 @@ body {
   }
 }
 
+.logout_btn {
+  border: none;
+  background-color: white;
+  .nav_menu_link();
+
+  &:hover {
+    border-right: 7px solid #FF6F61 !important;
+
+  }
+}
+
 .nav_menu_link {
   height: 65px;
-  width: 250px;
+  width: 15vw;
   margin-bottom: 10px;
   padding-left: 30px;
   display: flex;
@@ -188,6 +194,60 @@ a {
   text-decoration: none;
   color: black;
 }
+
+.main_ctn {
+  margin: 5vh 15vw;
+  width: 80vw;
+  padding: 35px;
+}
+
+// css for dashboard ctn
+
+.dashboard_ctn {
+  display: flex;
+  flex-direction: column;
+
+  .perf_first_ctn {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5vh;
+
+    img {
+      width: 60%;
+      margin: -50px 5vw;
+    }
+  }
+
+  .description_dash {
+    line-height: 1.1;
+    width: 45vw;
+    padding: 20px 0px;
+  }
+
+}
+
+.performance_ctn_cards {
+  margin: 5vh 0;
+
+  ._card {
+    margin: 3vh 0;
+    width: 75vw;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    transition: all 0.5s ease 0s;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.02);
+      .box-shadow();
+    }
+  }
+
+}
+
+// end of css for dashboard ctn
 
 //  css for table
 .anim-table {
@@ -234,14 +294,9 @@ td {
 }
 
 .app_form {
-  position: absolute;
   width: 1400px;
   height: 400px;
-  margin-top: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin: 5vh 0vw;
   border-radius: 15px;
   background-color: white;
   -webkit-box-shadow: 0px 22px 50px rgba(153, 153, 153, 0.7);
@@ -306,7 +361,7 @@ textarea {
   cursor: pointer;
 }
 
-#submit-form {
+.submit-form {
   background-color: #696cff;
   border: none;
   color: white;
@@ -336,13 +391,12 @@ textarea {
 
 ._view_btn-ctn {
   width: 80vw;
-  height: 300px;
+  min-height: 300px;
   background-color: white;
   margin: 50px 0px;
   border-radius: 15px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   .anim-view-ctn();
 }
 

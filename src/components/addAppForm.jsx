@@ -17,11 +17,14 @@ function AddAppForm() {
       email: email,
       phNumber: phNumber,
     });
-    console.log('send data works');
+  };
+
+  const handleSubmit = (e) => {
+    preventDefault(e);
   };
 
   return (
-    <div>
+    <div className="app_form">
       <input
         type="text"
         name="fullname"
@@ -54,7 +57,9 @@ function AddAppForm() {
         value={phNumber}
       />
 
-      <button onClick={onCreate}>Submit</button>
+      <button onClick={onCreate} className="submit-form">
+        Submit
+      </button>
     </div>
   );
 }

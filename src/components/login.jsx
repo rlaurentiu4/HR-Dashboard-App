@@ -66,6 +66,7 @@ class Login extends React.Component {
                   id="password"
                 />
               </div>
+              <div>{this.error}</div>
               <div className="flex-center btn-log-in-ctn">
                 <button onClick={this.login} className="main_btn-login">
                   Login

@@ -16,7 +16,7 @@ class JobTable extends React.Component {
   }
 
   renderTable() {
-    return jobData.map((job, index) => {
+    return jobData.map((job) => {
       const { id, jobName, duration } = job;
       return (
         <tr key={id}>

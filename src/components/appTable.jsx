@@ -22,6 +22,13 @@ function AppTable() {
   //   });
   // });
 
+  // let tableHeader = () => {
+  //   let header = Object.keys(data[0]);
+  //   return header.map((key) => {
+  //     return <th key={key}>{key.toUpperCase()}</th>;
+  //   });
+  // };
+
   let renderTable = () => {
     return applicants.map((applicant, index) => {
       const { firstName, secondName, email, phNumber } = applicant;
@@ -50,7 +57,16 @@ function AppTable() {
   // );
   // return <div>{true ? data() : renderData()}</div>;
 
-  return <div>{renderTable()}</div>;
+  return (
+    <div>
+      <table className="react-table">
+        <tbody>
+          {/* <tr>{tableHeader()}</tr> */}
+          {renderTable()}
+        </tbody>
+      </table>
+    </div>
+  );
 }
 
 export default AppTable;
