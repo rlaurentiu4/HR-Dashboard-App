@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import DashSvg from '../assets/undraw_celebration_0jvk.svg';
 
 class DashboardView extends React.Component {
@@ -25,7 +27,9 @@ class DashboardView extends React.Component {
           <div className="performance_ctn_cards">
             <div className="_card">
               <div>
-                <h2>Lorem ipsum</h2>
+                <Link to="/applicantView">
+                  <h2>Applicants</h2>
+                </Link>
                 <p className="description_dash">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
                   quis tortor nunc. Fusce eget accumsan orci, at viverra ipsum.
@@ -38,7 +42,9 @@ class DashboardView extends React.Component {
             </div>
             <div className="_card">
               <div>
-                <h2>Lorem ipsum</h2>
+                <Link to="/jobsView">
+                  <h2>Jobs</h2>
+                </Link>
                 <p className="description_dash">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
                   quis tortor nunc. Fusce eget accumsan orci, at viverra ipsum.
@@ -51,20 +57,9 @@ class DashboardView extends React.Component {
             </div>
             <div className="_card">
               <div>
-                <h2>Lorem ipsum</h2>
-                <p className="description_dash">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-                  quis tortor nunc. Fusce eget accumsan orci, at viverra ipsum.
-                  In urna erat, tincidunt sit amet pulvinar a, suscipit et
-                  tortor. Integer condimentum risus erat, eget rhoncus risus
-                  venenatis dignissim.
-                </p>
-              </div>
-              <div>data</div>
-            </div>
-            <div className="_card">
-              <div>
-                <h2>Lorem ipsum</h2>
+                <Link to="/interviewView">
+                  <h2>Interviews</h2>
+                </Link>
                 <p className="description_dash">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
                   quis tortor nunc. Fusce eget accumsan orci, at viverra ipsum.

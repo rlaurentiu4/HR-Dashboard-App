@@ -10,7 +10,7 @@ class JobsView extends React.Component {
     let appLenght = Object.keys(appData).length;
     return (
       <React.Fragment>
-        <div>
+        <div className="main_ctn anim-view-ctn">
           <div className="_view_btn-ctn">
             <button className="btn-action">
               <img src={apvApp} className="btn-icn" />

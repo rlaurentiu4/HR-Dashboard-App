@@ -6,7 +6,7 @@ class InterviewView extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="main_ctn anim-view-ctn">
         <h1>hello</h1>
       </div>
     );
