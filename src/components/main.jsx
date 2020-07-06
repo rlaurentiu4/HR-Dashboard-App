@@ -11,7 +11,7 @@ class Main extends React.Component {
   render() {
     return (
       <Router>
-        <div className="main-ctn">
+        <div>
           <NavBar />
           <Switch>
             <Route path="/" exact component={DashboardView} />

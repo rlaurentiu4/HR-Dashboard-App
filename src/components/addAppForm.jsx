@@ -3,6 +3,8 @@ import firebase from '../config/firebase.js';
 import regeneratorRuntime from 'regenerator-runtime';
 
 function AddAppForm() {
+  // const [formOpened] = React.UserState([{ status: false }]);
+
   const [fName, setNewFName] = React.useState([]);
   const [sName, setSName] = React.useState([]);
 
@@ -17,10 +19,6 @@ function AddAppForm() {
       email: email,
       phNumber: phNumber,
     });
-  };
-
-  const handleSubmit = (e) => {
-    preventDefault(e);
   };
 
   return (

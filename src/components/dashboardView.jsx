@@ -7,7 +7,7 @@ class DashboardView extends React.Component {
   render() {
     return (
       <>
-        <div className="dashboard_ctn main_ctn anim-view-ctn">
+        <div className="main_ctn anim-view-ctn">
           <div className="perf_first_ctn">
             <div>
               <h1>Performance insights</h1>
@@ -26,7 +26,7 @@ class DashboardView extends React.Component {
 
           <div className="performance_ctn_cards">
             <div className="_card">
-              <div>
+              <div className="anim-view-ctn">
                 <Link to="/applicantView">
                   <h2>Applicants</h2>
                 </Link>
@@ -41,7 +41,7 @@ class DashboardView extends React.Component {
               <div>data</div>
             </div>
             <div className="_card">
-              <div>
+              <div className="anim-view-ctn">
                 <Link to="/jobsView">
                   <h2>Jobs</h2>
                 </Link>
@@ -56,7 +56,7 @@ class DashboardView extends React.Component {
               <div>data</div>
             </div>
             <div className="_card">
-              <div>
+              <div className="anim-view-ctn">
                 <Link to="/interviewView">
                   <h2>Interviews</h2>
                 </Link>

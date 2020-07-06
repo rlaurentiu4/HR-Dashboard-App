@@ -31,7 +31,7 @@ class ApplicantView extends React.Component {
       <React.Fragment>
         <div className="main_ctn anim-view-ctn">
           <div className="_view_btn-ctn">
-            <div>
+            <div className="flex-center">
               <button onClick={this.showFormApp} className="btn-action">
                 <img src={addApp} className="btn-icn" />
                 Add Applicant
@@ -41,7 +41,7 @@ class ApplicantView extends React.Component {
                 Remove Applicant
               </button>
             </div>
-            <div>
+            <div className="flex-center">
               {showForm && <AddAppForm closeForm={this.closeFormApp} />}
             </div>
           </div>
