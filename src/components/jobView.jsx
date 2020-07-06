@@ -11,7 +11,7 @@ class JobsView extends React.Component {
     return (
       <React.Fragment>
         <div className="main_ctn anim-view-ctn">
-          <div className="_view_btn-ctn">
+          <div className="_view_btn-ctn mg_bot-s">
             <button className="btn-action">
               <img src={apvApp} className="btn-icn" />
               Approve Applicant

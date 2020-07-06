@@ -189,39 +189,44 @@ a {
   color: black;
 }
 
-// css for dashboard ctn
-
 .main_ctn {
   display: flex;
   flex-direction: column;
   margin: 8vh 18vw;
   position: absolute;
+}
 
-  .perf_first_ctn {
-    display: flex;
-    flex-direction: row;
-    margin-top: 5vh;
+.mg_bot-s {
+  margin-bottom: 4vh;
+}
 
-    img {
-      width: 60%;
-      margin: -50px 5vw;
-    }
-  }
+// css for dashboard ctn
 
-  .description_dash {
-    line-height: 1.1;
-    width: 45vw;
-    padding: 20px 0px;
+.perf_first_ctn {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5vh;
+
+  img {
+    width: 60%;
+    margin: -50px 5vw;
   }
 }
 
 .performance_ctn_cards {
   margin: 5vh 0;
 
+  .description_dash {
+    line-height: 1.1;
+    width: 45vw;
+    padding: 20px 0px;
+  }
+
   ._card {
     margin: 4vh 0;
     width: 75vw;
-    padding: 20px;
+    min-height: 15vh;
+    padding: 30px;
     background-color: white;
     border-radius: 10px;
     display: flex;
